@@ -20,6 +20,9 @@ augroup auto_comment
 augroup end
 " Sync clipboard with system clipboard
 set clipboard=unnamedplus
+" mark active line and column
+set cursorline
+" set cursorcolumn
 
 " Keybindings
 " Leader Keys
@@ -72,7 +75,6 @@ nnoremap <leader>fs <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-
 lua << EOF
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the four listed parsers should always be installed)
@@ -88,7 +90,6 @@ require'nvim-treesitter.configs'.setup {
   highlight = {
     -- `false` will disable the whole extension
     enable = true,
-
 
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).

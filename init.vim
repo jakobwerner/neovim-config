@@ -42,6 +42,8 @@ nnoremap q :q<cr>
 " (Uses vim-unimpaired)
 nmap <cr> ]<Space>
 nmap <Backspace> [<Space>
+" undotree
+nnoremap <leader>u :UndotreeToggle<cr>
 
 call plug#begin()
 Plug 'lervag/vimtex'
@@ -54,6 +56,7 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'mbbill/undotree'
 " Python
 call plug#end()
 

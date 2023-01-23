@@ -47,6 +47,8 @@ nmap <cr> ]<Space>
 nmap <Backspace> [<Space>
 " undotree
 nnoremap <leader>u :UndotreeToggle<cr>
+" show git status
+nnoremap <leader>g :Git<cr>
 
 call plug#begin()
 Plug 'lervag/vimtex'

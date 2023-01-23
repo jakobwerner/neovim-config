@@ -36,8 +36,6 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 " Remap ^ in input mode
 inoremap <c-h> ^
-" Easier buffer switching
-nnoremap <c-b> :buffers<cr>:buffer
 " Use q to quit
 nnoremap q :q<cr>
 " Insert blank lines without going to input mode
@@ -53,11 +51,19 @@ Plug 'tpope/vim-unimpaired'
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 " Python
 call plug#end()
 
+" colorscheme
 set t_Co=256   " This is may or may not needed.
-
 set background=dark
 colorscheme PaperColor
 let g:airline_theme='papercolor'
+
+" fuzzy finder key mappings
+nnoremap <leader>f <cmd>Telescope find_files<cr>
+nnoremap <leader>s <cmd>Telescope live_grep<cr>
+nnoremap <leader>b <cmd>Telescope buffers<cr>
+nnoremap <leader>h <cmd>Telescope help_tags<cr>

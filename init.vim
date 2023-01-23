@@ -25,8 +25,8 @@ set clipboard=unnamedplus
 " Leader Keys
 let mapleader="\<space>"
 " Edit and source vimrc
-nnoremap <leader>e :split $MYVIMRC<cr>
-nnoremap <leader>s :source $MYVIMRC<cr>
+nnoremap <leader>ce :split $MYVIMRC<cr>
+nnoremap <leader>cs :source $MYVIMRC<cr>
 " Stop search highlighting on hitting <Esc>
 nnoremap <Esc> :nohlsearch<cr>
 " Navigate windows more easily
@@ -53,6 +53,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Python
 call plug#end()
 
@@ -63,7 +64,34 @@ colorscheme PaperColor
 let g:airline_theme='papercolor'
 
 " fuzzy finder key mappings
-nnoremap <leader>f <cmd>Telescope find_files<cr>
-nnoremap <leader>s <cmd>Telescope live_grep<cr>
-nnoremap <leader>b <cmd>Telescope buffers<cr>
-nnoremap <leader>h <cmd>Telescope help_tags<cr>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fs <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  -- A list of parser names, or "all" (the four listed parsers should always be installed)
+  ensure_installed = { "c", "lua", "vim", "help", "python", "latex" },
+
+  -- Install parsers synchronously (only applied to `ensure_installed`)
+  sync_install = false,
+
+  -- Automatically install missing parsers when entering buffer
+  -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+  auto_install = true,
+
+  highlight = {
+    -- `false` will disable the whole extension
+    enable = true,
+
+
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF

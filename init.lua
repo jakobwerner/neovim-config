@@ -62,6 +62,7 @@ Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'https://github.com/morhetz/gruvbox'
+Plug 'https://github.com/rose-pine/neovim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -87,8 +88,8 @@ call plug#end()
 " colorscheme
 set t_Co=256   " This is may or may not needed.
 set background=dark
-colorscheme gruvbox
-let g:airline_theme='gruvbox'
+colorscheme rose-pine
+let g:airline_theme='molokai'
 
 " fuzzy finder key mappings
 nnoremap <leader>ff <cmd>Telescope find_files<cr>

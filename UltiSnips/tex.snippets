@@ -1,6 +1,6 @@
 snippet bg "environment"
 \begin{$1}
-  $2
+	$2
 \end{$1}
 $0
 endsnippet
@@ -21,7 +21,7 @@ endsnippet
 
 snippet entry "diary entry"
 \begin{entry}[$1]
-  $2
+	$2
 \end{entry}$0
 endsnippet
 
@@ -31,80 +31,80 @@ endsnippet
 
 snippet eq "unlabled displayed equation"
 \begin{equation*}
-  $1
+	$1
 \end{equation*}$0
 endsnippet
 
 snippet par "paragraph"
 \begin{para}[$1] \label{par:$2}
-  $3
+	$3
 \end{para}$0
 endsnippet
 
 snippet comp "composition"
 \begin{equation*}
-  \begin{tikzcd}[column sep=.5cm]
-    $1 \arrow[r,"$2"] & $3 \arrow[r,"$4"] & $5
-  \end{tikzcd}
+	\begin{tikzcd}[column sep=.5cm]
+		$1 \arrow[r,"$2"] & $3 \arrow[r,"$4"] & $5
+	\end{tikzcd}
 \end{equation*}$0
 endsnippet
 
 snippet square "square diagram"
 \begin{equation*}
-  \begin{tikzcd}
-    $1 \arrow[r,"$5"] \arrow[d,"$6"'] & $2 \arrow[d,"$7"] \\\\
-    $3 \arrow[r,"$8"'] & $4
-  \end{tikzcd}
+	\begin{tikzcd}
+		$1 \arrow[r,"$5"] \arrow[d,"$6"'] & $2 \arrow[d,"$7"] \\\\
+		$3 \arrow[r,"$8"'] & $4
+	\end{tikzcd}
 \end{equation*}$0
 endsnippet
 
 snippet lem "lemma"
 \begin{lemma} \label{lem:$1}
-  $2
+	$2
 \end{lemma}$0
 endsnippet
 
 snippet cor "corollary"
 \begin{corollary} \label{cor:$1}
-  $2
+	$2
 \end{corollary}$0
 endsnippet
 
 snippet thm "theorem"
 \begin{theorem} \label{thm:$1}
-  $2
+	$2
 \end{theorem}$0
 endsnippet
 
 snippet exmp "example"
 \begin{example} \label{exmp:$1}
-  $2
+	$2
 \end{example}$0
 endsnippet
 
 snippet rem "remark"
 \begin{remark} \label{rem:$1}
-  $2
+	$2
 \end{remark}$0
 endsnippet
 
 snippet pf "proof"
 \begin{proof}
-  $1
+	$1
 \end{proof}
 endsnippet
 
 snippet enum "labeled enumerate"
 \begin{enumerate}
-  \item \label{$1:$2} $3
-  \item \label{$1:$4} $5
+	\item \label{$1:$2} $3
+	\item \label{$1:$4} $5
 \end{enumerate}$0
 endsnippet
 
 snippet enum* "unlabeled enumerate"
 \begin{enumerate}
-  \item $1
-  \item $2
+	\item $1
+	\item $2
 \end{enumerate}$0
 endsnippet
 

@@ -163,10 +163,10 @@ local lsp_flags = {
     -- This is the default in Nvim 0.7+
     debounce_text_changes = 150,
 }
-require('lspconfig')['pyright'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-}
+-- require('lspconfig')['pyright'].setup{
+--     on_attach = on_attach,
+--     flags = lsp_flags,
+-- }
 require('lspconfig')['tsserver'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
@@ -246,6 +246,10 @@ cmp.setup.cmdline(':', {
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 require('lspconfig')['texlab'].setup {
+    capabilities = capabilities
+}
+
+require('lspconfig')['pylsp'].setup {
     capabilities = capabilities
 }
 
